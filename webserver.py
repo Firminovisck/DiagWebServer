@@ -2,9 +2,9 @@ from http.server import HTTPServer, BaseHTTPRequestHandler # Importar do Módulo
 from types import TracebackType
 
 class MainServer(BaseHTTPRequestHandler): #Criação do Server Herdando os métodos do BaseHTTPRequestHandler
-    def do_GET(self): #do_GET é um dos métodos do BaseHTTPRequestHandler que permite Receber Get Requests
+    def do_GET(self) -> object: #do_GET é um dos métodos do BaseHTTPRequestHandler que permite Receber Get Requests
         if self.path == '/': #Definição do caminho onde estará o arquivo que o usuário irá acessar
-            self.path = '/DiagIndex.html' #Arquivo a ser exibido
+            self.path = '/DiagEventList.html' #Arquivo a ser exibido
             try:  
                 open_file = open(self.path[1:],).read() # O .read deste caso tem o objetivo de exibir na tela o texto ou as informações que estão dentro do 'open_file'
                                                         # O path[1:] indica que apenas desejamos pegar o nome que está depois do /
